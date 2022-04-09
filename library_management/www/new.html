@@ -1,0 +1,29 @@
+{% for article in articles %}
+
+<div class="py-8 row">
+    <div class="col-sm-1">
+        <img alt="{{ article.name }}" src="{{ article.image }}">
+    </div>
+    <div class="col">
+        <a class="font-size-lg" href="{{ article.route }}">{{ article.name }}</a>
+        <p class="text-muted">By {{ article.author }}</p> 
+    </div>
+</div>
+
+ 
+
+{% endfor %}
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="site-pagination">
+              {% if prev %}
+              <a href="/?page={{prev}}" class="btn btn-warning">Previous</a>
+              {% endif %}
+              {% if next %}
+              <a href="/?page={{next}}" class="btn btn-primary">Next</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
